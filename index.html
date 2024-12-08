@@ -1,60 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отправка анонимного письма с вложением</title>
+    <title>TECNINCO LLP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f2f2f2;
         }
-        .container {
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .form-container, .contact-info {
             background-color: white;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        textarea, input {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        button {
-            display: block;
+        .form-container input, .form-container textarea {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #4285f4;
             color: white;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #218838;
+        .form-container button:hover {
+            background-color: #3069d3;
+        }
+        .contact-info {
+            max-width: 300px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Отправка анонимного письма</h1>
-        <form action="send_mail.php" method="POST" enctype="multipart/form-data">
-            <textarea name="message" placeholder="Введите ваше письмо..." required></textarea>
-            <input type="file" name="attachment">
-            <button type="submit">Отправить анонимно</button>
-        </form>
+
+    <div class="header">
+        <h1>TECNINCO LLP</h1>
     </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h2>Get in touch</h2>
+            <form action="mail.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="body" rows="5" placeholder="Message" required></textarea>
+                <input type="file" name="attachment" required> <!-- Поле для загрузки файла -->
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Contact us</h2>
+            <p><strong>Address:</strong> Promzone, RGP block 4</p>
+            <p><strong>Phone:</strong> +7 777 777 77 77</p>
+            <p><strong>Email:</strong> hr.department@tecninco.kz</p>
+        </div>
+    </div>
+
 </body>
 </html>
