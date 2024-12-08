@@ -1,2 +1,2 @@
 # testmail
-Test of mail sender
+Anonymous mail sender with file attachments using PHPMailer
